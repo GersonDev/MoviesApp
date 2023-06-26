@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.screens.pelicula.PeliculasFragment">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/svBuscador"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/searchiew_background"
+        android:inputType="text"
+        app:iconifiedByDefault="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryBackground="@android:color/transparent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPeliculas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/svBuscador"/>
+
+    <TextView
+        android:id="@+id/tvNoResultados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No se encontraron resultados"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/rvPeliculas"
+        app:layout_constraintEnd_toEndOf="@+id/rvPeliculas"
+        app:layout_constraintStart_toStartOf="@+id/rvPeliculas"
+        app:layout_constraintTop_toTopOf="@+id/rvPeliculas" />
+</androidx.constraintlayout.widget.ConstraintLayout>
